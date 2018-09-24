@@ -40,7 +40,6 @@ def get_bucket_details(conn,args,s3_client,buckets_dict,bucket):
     #Creation date from the bucket details
     bucket_dict["creation_date"]=bucket["CreationDate"].strftime('%Y-%m-%d')
     #Calculate total fize by taking sum of all objects for each bucket
-    print(bucket_object.objects.all())
     object_size=sum([object.size for object in bucket_object.objects.all()])
     #Defulat file size is in bytes
     if str(args.size).upper()=="KB":
@@ -56,7 +55,7 @@ def get_bucket_details(conn,args,s3_client,buckets_dict,bucket):
     #Get the lastest modification date
     objs=s3_client.list_objects_v2(Bucket=bucket_name)['Contents']
     get_last_modified = lambda obj: int(obj['LastModified'].strftime('%s'))
-
+    sorted_objects=[obj for obj in sorted(objs, key=get_last_modified)]
     bucket_dict["last_modified"]=sorted_objects[-1]['LastModified'].strftime('%Y-%m-%d')
     #Find the monthly bill of each bucket (Not the best way)
     bucket_dict["cost"]=cost_explorer(args)
