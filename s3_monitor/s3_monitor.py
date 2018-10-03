@@ -27,7 +27,6 @@ def get_buckets(conn,args):
     allbuckets = s3_client.list_buckets()
     for bucket in allbuckets['Buckets']:
         buckets_dict[bucket['Name']]=get_bucket_details(conn,args,s3_client,buckets_dict,bucket)
-    print(buckets_dict)
     return buckets_dict
 
 def get_bucket_details(conn,args,s3_client,buckets_dict,bucket):
