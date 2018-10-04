@@ -41,7 +41,7 @@ Script to monitor S3 metadata
 * Last modified date (most recent file of a bucket)
 * And how much does it cost for the current month
 
-##### Sample run and output
+##### Documentation
 usage: s3_monitor.py [-h] [--size SIZE] [--type TYPE] [--filter FILTER] [--groupby GROUPBY]
 
 Monitor the details of AWS S3 buckets.
@@ -50,7 +50,8 @@ optional arguments:
   --type TYPE : Filter based on instance types (Standard, AA, ...)
   --filter FILTER : (Not fully implemented - regex support)
   --groupby GROUPBY : (Filter based on regions)
-  
+
+###### Sample code and output
 ``` s3_monitor.py --groupby sa-east-1 --size MB ```
 ```
 {'lal-business': {'creation_date': '2018-09-24', 'total_size': 0, 'no_of_files': 3, 'last_modified': '2018-09-24', 'cost': 0.0049999816}}
