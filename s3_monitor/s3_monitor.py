@@ -111,7 +111,7 @@ def main():
      parser.add_argument("--groupby")
      args=parser.parse_args()
      conn=connect_to_s3(args)
-     get_buckets(conn,args)
+     print(get_buckets(conn,args))
 
 if __name__=="__main__":
     main()
