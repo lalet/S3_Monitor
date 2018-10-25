@@ -26,7 +26,7 @@ Script to monitor S3 metadata
 } 
 ```
 ###### 3. Bundle these policies to the role that is being used :
-1. IAM > Roles > Search "<role>"
+1. IAM > Roles > Search "[role]"
 2. Attach policy:
   - [x] allowCostExplorerRead
 
