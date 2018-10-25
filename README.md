@@ -1,9 +1,6 @@
 # S3_Monitor
 Script to monitor S3 metadata
 
-# S3_Monitor
-Script to monitor S3 metadata
-
 ##### *Pre-requisites* :
 ###### 1. Install the plugin and the credentials
 * Install boto
